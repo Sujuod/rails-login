@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card card-container">
+      <center><h3 class='bold'>Please Sign In</h3></center>
+        <p id="profile-name" class="profile-name-card"></p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'form-control', :placeholder =>'Email', :required=>true %>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control', :placeholder =>'Password' , :required=>true%>
+          </div>
+          <div class="actions">
+            <%= f.submit 'Log in', :class => 'btn btn-lg btn-primary btn-block' %>
+          </div>
+        <% end %>
+         <a href="/users/sign_up" class="pull-right need-help">New? signup here </a>
+         <p class="notice"><%= notice %></p>
+         <p class="alert"><%= alert %></p>
+    </div><!-- /card-container -->
+</div><!-- /container -->

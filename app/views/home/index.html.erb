@@ -1,0 +1,12 @@
+<!--Check if user signed in and display email-->
+<% if user_signed_in? %>
+<div class="alert alert-success" style='  opacity: .85; padding: 50px;'>
+  <span class="glyphicon glyphicon-ok"></span> Hey! <strong><%= current_user.email %></strong>, You succesfuly logged in
+  <strong><%= link_to('Logout', destroy_user_session_path, method: :delete) %></strong>
+</div>
+<% else %>
+<!-- if user not signed in display a link to login page-->
+<div class="well" style='  opacity: .85; padding: 50px;'>
+  <strong><%= link_to('Login from Here', new_user_session_path)  %></strong>
+</div>
+<% end %>
